@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  memcached:
+    image: memcached:alpine
+
+  gateway.api:
+    image: ${DOCKER_REGISTRY-}gatewayapi
+    build:
+      context: .
+      dockerfile: Gateway/Gateway.API/Dockerfile
+
+  profile.api:
+    image: ${DOCKER_REGISTRY-}profileapi
+    build:
+      context: .
+      dockerfile: Profile/Profile.API/Dockerfile
+
+  admin.api:
+    image: ${DOCKER_REGISTRY-}adminapi
+    depends_on:
+      - rabbitmq
+    build:
+      context: .
+      dockerfile: Admin/Admin.API/Dockerfile
+  
+

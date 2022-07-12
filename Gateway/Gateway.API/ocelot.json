@@ -1,0 +1,29 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/skill-tracker/api/Admin/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "172.17.0.1",
+          "Port": 8002
+        }
+      ],
+      "UpstreamPathTemplate": "/Admin/{catchAll}"
+    },
+    {
+      "DownstreamPathTemplate": "/skill-tracker/api/Engineer/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "172.17.0.1",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/Engineer/{catchAll}"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8000"
+  }
+}

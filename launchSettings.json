@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "serviceActions": {
+        "profile.api": "StartWithoutDebugging"
+      },
+      "commandVersion": "1.0"
+    }
+  }
+}
