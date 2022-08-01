@@ -45,7 +45,7 @@ namespace Profile.Application.Features.Commands.AddProfile
                 Data = Newtonsoft.Json.JsonConvert.SerializeObject(request)
             };
 
-            //await _publishEndpoint.Publish<AddProfileEvent>(eventMessage);
+            await _publishEndpoint.Publish<AddProfileEvent>(eventMessage);
 
             return userId;
         } 
